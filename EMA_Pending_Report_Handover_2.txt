@@ -1,0 +1,16 @@
+
+Turno de mañana - Miércoles 03/05 :redsiren:
+
+### PROD ###
+*CM 424270 | SCTASK0052267 | 02/05/2023 07:00 | Rolling restart of PSUR cluster servers every day 
+*CM 424269 | SCTASK0052272 | 02/05/2023 07:00 | Rolling restart of Common Repository cluster 
+*CM 436351 | SCTASK0059507 | Access to ORACLEBI.eudra.org for OBI_LINEAGΕ --> Chequear con T3 
+
+### IMs ###
+*IM 2784251 | SCTASK0059712 | Performance in TEST is worst after the AWS migration --> Chequear con T3SYS
+*IM 2784339 | SCTASK0059770 | SIAMED ETL fails in Test environment --> Escalar a T3DBA
+*IM  | SCTASK0059805 | PROD - products db/table issue --> Escalar a T3FMW
+
+### PMs ###
+*PM 24601 | SCTASK0056995 | Error in EudraCT DEV environment data base --> Escalar update a Alberto
+*PM 24483 | SCTASK0051124 | MMS3 (TEST) - Strange error when logged in  --> Escalar update a Ana Guzman

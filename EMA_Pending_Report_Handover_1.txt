@@ -1,0 +1,11 @@
+************ IMPORTANTE **************
+¡¡NO SE REALIZARÁN MÁS PETICIONES DE CAMBIOS EN CIs QUE NO ESTÉN EN EL PORTAL!!
+
+*** INFORMATIVO ***
+- URL del Excel de cambios -> https://mcsprod01.es.oracle.com:3345/emacm/ (Password en oper-tier-2)
+- REVISAR LA LISTA DE LOS TICKETS ABIERTOS DURANTE EL TURNO UNAS CUANTAS VECES (para ver cómo filtarlos, mirar correo EMA ServiceNow - Consejos útiles para una mejor visualización de los tickets abiertos en nuestra cola)
+- Desde ahora en adelante, todos los cambios en entornos de NON PROD (TEST/DEV/UAT/SIT) PROGRAMADOS en fuera de horas no se harán sin la aprobación de los TAM (Mandar correo a Peter Mars y Roxana con el caso en concreto). Esto no aplica a realizar cambios en estos entornos fuera de horas, solo para que los nos piden explícitamente hacerlos a una hora concreta
+- IR 1204012 de Iker Alonso - Import modify SSL Certificates into JDK - Se ha actualizado el confluence: https://knowledgebase.ema.europa.eu/confluence/pages/viewpage.action?spaceKey=IKB&title=WLS%3A+Useful+commands+for+Keystore+and+Truststore+management
+For any imported certificate, please use always the name of the URL/Endpoint as the certificate alias, except for ROOT and STANDALONE certificates.
+
+

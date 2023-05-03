@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>EMA Pending Report</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/xlsx.full.min.js"></script>
+	<script src="./jquery/2.1.1/jquery.min.js"></script>
+	<script src="./js/FileSaver.min.js"></script>
+	<script src="./js/md5.min.js"></script>
+	<script src="./js/myScript.js"></script>
+</head>
+<body onload="shuttle()">
+
+	<header>
+		<div id="intro">
+			<img src="./background/intro.png" alt="Intro">
+		</div>
+		<div id="current_date">
+		</div>
+	</header>
+
+	<div id="validate-credentials">
+		<form>
+			<input type="text" name="username" id="username" Placeholder="Enter username" autocomplete="off"><br>
+			<input type="password" name="password" id="password" Placeholder="Enter password"><br>
+			<button onclick="validateUser()" id="button-validation" class="button" type="button">Submit</button>
+		</form>
+	</div>
+
+	<div id="select-mode" style="display: none;">
+		<h2>Select editor or viewer mode:</h2>
+		<select id="Mode"
+			onchange="displayDivDemo('import-part', 'section-0', 'section-2', 'section-3', 'section-4', 'button-excel', 'button-save-data', 'button-load-data', 'button-generate-ho', 'button-save-ho', this)">
+			<option value="0">Select mode</option>
+			<option value="1">Editor</option>
+			<option value="2">Viewer</option>
+		</select>
+	</div>
+	<div id="import-part" style="display: none;">
+		<h2>Import an excel file:</h2>
+		<button onclick="mcsprodFile()" id="button-mcsprod" type="button">mcsprod file</button>
+		<label class="custom-file-upload">
+
+			<input type="file" id="excel_file" />
+			<i class="fa fa-cloud-upload"></i> Import another
+		</label>
+	</div>
+
+	<div id="section-buttons" style="display: none;">
+		<button onclick="pageChange('CM')" id="button-menu-cm" type="button" style="background-color: #AA643B">
+			<h3 id="h3-cm" style="color: #E9E1CA">CMs</h3>
+		</button>
+		<button onclick="pageChange('IM')" id="button-menu-im" type="button">
+			<h3 id="h3-im">IMs</h3>
+		</button>
+		<button onclick="pageChange('PM')" id="button-menu-pm" type="button">
+			<h3 id="h3-pm">PMs</h3>
+		</button>
+		<button onclick="pageChange('BLACKOUT')" id="button-menu-bo" type="button">
+			<h3 id="h3-bo">Blackouts</h3>
+		</button>
+		<button onclick="pageChange('HANDOVER')" id="button-menu-ho" type="button">
+			<h3 id="h3-ho">HANDOVER</h3>
+		</button>
+
+		<button onclick="exportExcel(false)" id="button-excel" class="button" type="button">Export</button>
+		<button onclick="dataSavedMachine()" id="button-save-data" class="button" type="button">Save</button>
+		<button onclick="mcsprodFileUpdate()" id="button-load-data" class="button" type="button">Update</button>
+
+
+	</div>
+
+	<div id="section-CM" style="display: none;">
+		<h1>CMs</h1>
+		<div id="section-0" style="display: none;">
+			<input type="text" id="cm_id" placeholder="CM Ticket">
+			<select id="status">
+				<option value="Select Status">Select Status</option>
+				<option value="Draft">Draft</option>
+				<option value="Pending approval">Pending approval</option>
+				<option value="Pending scheduling">Pending scheduling</option>
+				<option value="Scheduled">Scheduled</option>
+				<option value="Completed">Completed</option>
+				<option value="WIP">WIP</option>
+			</select>
+			<select id="enviroment">
+				<option value="Select Enviroment">Select Enviroment</option>
+				<option value="Prod">Prod</option>
+				<option value="XCOMP">XCOMP</option>
+				<option value="Training">Training</option>
+				<option value="Test">Test</option>
+				<option value="Dev">Dev</option>
+				<option value="Perf Test">Perf Test</option>
+				<option value="SIT">SIT</option>
+				<option value="UAT">UAT</option>
+				<option value="RTEST">RTEST</option>
+				<option value="Decommission">Decommission</option>
+			</select>
+			<input type="text" id="stask_id" placeholder="STASK number">
+			<input type="text" id="summary" placeholder="Summary">
+			<br>
+			<input type="text" id="date" placeholder="dd/mm/yy hh:mm"
+				oninput="this.value = this.value.replace(/[^0-9/ :]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+				maxlength="16">
+			<input type="text" id="imp_name" placeholder="Implementer Name">
+			<input type="text" id="obs" placeholder="Observations">
+			<input type="text" list="waiting_for_list" id="waiting_for" placeholder="Waiting for">
+			<datalist id="waiting_for_list">
+				<option value="Tier 2 actions"></option>
+				<option value="Customer feedback"></option>
+				<option value="PSEs feedback"></option>
+				<option value="T3DBA feedback"></option>
+				<option value="T3FMW feedback"></option>
+				<option value="T3SYS feedback"></option>
+			</datalist>
+			<br>
+			<button onclick="addFunctionCM()" id="button-add" class="button" type="button">Add</button>
+		</div>
+
+		<div id="section-1">
+			<div id="section-PROD" style="display: none;">
+				<h2>PROD</h2>
+				<table id="myTable-prod">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-XCOMP" style="display: none;">
+				<h2>XCOMP</h2>
+				<table id="myTable-xcomp">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-Training" style="display: none;">
+				<h2>TRAINING</h2>
+				<table id="myTable-training">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-Test" style="display: none;">
+				<h2>TEST</h2>
+				<table id="myTable-test">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-Dev" style="display: none;">
+				<h2>DEV</h2>
+				<table id="myTable-dev">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-PerfTest" style="display: none;">
+				<h2>PERF TEST</h2>
+				<table id="myTable-perftest">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-SIT" style="display: none;">
+				<h2>SIT</h2>
+				<table id="myTable-sit">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-UAT" style="display: none;">
+				<h2>UAT</h2>
+				<table id="myTable-uat">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-RTEST" style="display: none;">
+				<h2>RTEST</h2>
+				<table id="myTable-rtest">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="section-1">
+			<div id="section-Decommission" style="display: none;">
+				<h2>Decommission</h2>
+				<table id="myTable-Decommission">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="status">Status</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="date">Scheduled Date Madrid time</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="excel_data" class="mt-5"></div>
+
+	<div id="section-IM" style="display: none;">
+		<h1>IMs</h1>
+		<div id="section-2" style="display: none;">
+			<input type="text" id="im_id" placeholder="IM Ticket">
+			<input type="text" id="im_stask_id" placeholder="STASK number">
+			<input type="text" id="im_summary" placeholder="Summary">
+			<input type="text" id="im_imp_name" placeholder="Implementer Name">
+			<br>
+			<input type="text" id="im_obs" placeholder="Observations">
+			<input type="text" list="im_waiting_for_list" id="im_waiting_for" placeholder="Waiting for">
+			<datalist id="im_waiting_for_list">
+				<option value="WIP"></option>
+				<option value="Tier 2 actions"></option>
+				<option value="Customer feedback"></option>
+				<option value="PSEs feedback"></option>
+				<option value="T3DBA feedback"></option>
+				<option value="T3FMW feedback"></option>
+				<option value="T3SYS feedback"></option>
+			</datalist>
+			<br>
+			<button onclick="addFunctionIM()" id="button-add" class="button" type="button">Add</button>
+		</div>
+
+		<div id="section-IM-table" style="display: none;">
+			<div id="section-1">
+				<table id="myTable-ims">
+					<tr>
+						<th class="im">IM Ticket</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="section-PM" style="display: none;">
+		<h1>PMs</h1>
+		<div id="section-3" style="display: none;">
+			<input type="text" id="pm_id" placeholder="PM Ticket">
+			<input type="text" id="pm_stask_id" placeholder="STASK number">
+			<input type="text" id="pm_summary" placeholder="Summary">
+			<input type="text" id="pm_imp_name" placeholder="Implementer Name">
+			<br>
+			<input type="text" id="pm_obs" placeholder="Observations">
+			<input type="text" list="pm_waiting_for_list" id="pm_waiting_for" placeholder="Waiting for">
+			<datalist id="pm_waiting_for_list">
+				<option value="WIP"></option>
+				<option value="Tier 2 actions"></option>
+				<option value="Customer feedback"></option>
+				<option value="PSEs feedback"></option>
+				<option value="T3DBA feedback"></option>
+				<option value="T3FMW feedback"></option>
+				<option value="T3SYS feedback"></option>
+			</datalist>
+			<br>
+			<button onclick="addFunctionPM()" id="button-add" class="button" type="button">Add</button>
+		</div>
+
+		<div id="section-PM-table" style="display: none;">
+			<div id="section-1">
+				<table id="myTable-pms">
+					<tr>
+						<th class="pm">PM Ticket</th>
+						<th class="stask">STASK number</th>
+						<th class="summary">Summary</th>
+						<th class="implementer">Implementer Name</th>
+						<th class="obs">Observations</th>
+						<th class="waiting">Waiting for</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="section-BLACKOUT" style="display: none;">
+		<h1>Blackouts</h1>
+		<div id="section-4" style="display: none;">
+			<input type="text" id="blackout_cm_id" placeholder="CM Ticket">
+			<input type="text" id="blackout_stask_id" placeholder="STASK number">
+			<input type="text" id="ir_id" placeholder="IR number">
+			<input type="text" id="blackout_summary" placeholder="Summary">
+			<br>
+			<button onclick="addFunctionBLACKOUT()" id="button-add" class="button" type="button">Add</button>
+		</div>
+
+		<div id="section-BLACKOUT-table" style="display: none;">
+			<div id="section-1">
+				<table id="myTable-blackouts">
+					<tr>
+						<th class="cm">CM Ticket</th>
+						<th class="stask">STASK number</th>
+						<th class="ir">IR number</th>
+						<th class="summary">Summary</th>
+						<th class="del"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="section-HANDOVER" style="display: none;">
+		<h1>HANDOVER</h1>
+
+		<div id="section-HANDOVER-text">
+			<textarea id="avisosPermanentes" style="overflow: hidden;"></textarea><br>
+			<textarea id="cambiosT2actions" style="overflow: hidden;"></textarea><br>
+			<button onclick="editHandover()" id="button-generate-ho" class="button" type="button">Generate
+				Handover</button>
+			<button onclick="saveHandover()" id="button-save-ho" class="button" type="button">Save Handover</button>
+		</div>
+	</div>
+
+	<script>
+
+		var inputPss = document.getElementById("password");
+		inputPss.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				document.getElementById("button-validation").click();
+			}
+		});
+
+		// Leemos todo el contenido del excel que cargamos mediante el input del principio
+		const excel_file = document.getElementById('excel_file');
+
+		excel_file.addEventListener('change', (event) => {
+
+			// Si el archivo no es xlsx o xls no te permite continuar
+			if (!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type)) {
+				document.getElementById('excel_data').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+				excel_file.value = '';
+
+				return false;
+			}
+
+			document.getElementById('excel_data').style = "display: none;";
+
+			var reader = new FileReader();
+
+			reader.readAsArrayBuffer(event.target.files[0]);
+
+			reader.onload = function (event) {
+
+				// Conocemos el Modo en el que vamos a actuar - Editor o Visor
+				var sel_mode = document.getElementById("Mode").value;
+
+				// Una vez seleccionemos el Modo y cargemos el excel desaparece el elemento de seleccionar Modo
+				document.getElementById("select-mode").style.display = 'none';
+
+				var data = new Uint8Array(reader.result);
+
+				// Leemos el excel que hemos cargado
+				var work_book = XLSX.read(data, { type: 'array' });
+
+				// Guardamos en una variable todas las Sheets
+				var sheet_name = work_book.SheetNames;
+
+				var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], { header: 1 }); 		// Sheet 1 - CMs
+				var sheet_data_2 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[1]], { header: 1 }); 	// Sheet 2 - IMs
+				var sheet_data_3 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[2]], { header: 1 }); 	// Sheet 3 - PMs
+				var sheet_data_4 = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[3]], { header: 1 });	// Sheet 4 - Blackouts
+
+				// Sheet 1 - CMs
+				if (sheet_data.length > 0) { createSheet1(sheet_data, sel_mode); }
+
+				// Sheet 2 - IMs
+				if (sheet_data_2.length > 0) { createSheet2(sheet_data_2, sel_mode); }
+
+				// Sheet 3 - PMs
+				if (sheet_data_3.length > 0) { createSheet3(sheet_data_3, sel_mode); }
+
+				// Sheet 4 - Blackouts
+				if (sheet_data_4.length > 0) { createSheet4(sheet_data_4, sel_mode); }
+
+				// Handover
+				createHandover(sel_mode);
+
+				excel_file.value = '';
+
+			}
+
+			// Una vez seleccionado el Modo Editor o Visor mostramos los botones de páginas CM/IM/PM/Blackout y desaparece el elemento del input para cargar el excel
+			document.getElementById("section-buttons").style.display = 'block';
+			document.getElementById("section-CM").style.display = 'block';
+			document.getElementById("import-part").style.display = 'none';
+
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,1357 @@
+html {
+    background: url("../background/96dpi_DataTexture_10g.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#section-buttons button {
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 2px grey;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    padding-bottom: 10%;
+}
+
+table {
+    width: 100%;
+}
+
+#intro {
+    width: 100%;
+}
+
+#intro img {
+    width: 100%;
+}
+
+H1,
+H2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-left: 5%;
+    color: #E9E1CA;
+    text-shadow: 2px 2px 2px grey;
+}
+
+H1 {
+    margin-left: 5%;
+}
+
+H2 {
+    margin-left: 2.5%;
+}
+
+H5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+button H1 {
+    margin-left: 0;
+}
+
+div#validate-credentials {
+    margin-top: 100px;
+    text-align: center;
+}
+
+input#username,
+input#password {
+    width: 300px;
+    height: 30px;
+}
+
+input#username:hover,
+input#password:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+select#Mode {
+    font-size: 20px;
+}
+
+#section-1 select option:selected[value="Draft"] {
+    background-color: yellow;
+    color: black;
+}
+
+#section-1 select option[value="Select Status"] {
+    background-color: white;
+    color: black;
+}
+
+#section-1 select option[value="Draft"] {
+    background-color: yellow;
+    color: black;
+}
+
+#section-1 select option[value="Pending approval"] {
+    background-color: #81D0E5;
+    color: black;
+}
+
+#section-1 select option[value="Pending scheduling"] {
+    background-color: #00C5FF;
+    color: black;
+}
+
+#section-1 select option[value="Scheduled"] {
+    background-color: #9F01A9;
+    color: white;
+}
+
+#section-1 select option[value="Completed"] {
+    background-color: red;
+    color: white;
+}
+
+#section-1 select option[value="WIP"] {
+    background-color: #81F07A;
+    color: black;
+}
+
+#current_date {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: right;
+    margin: 2%;
+    text-shadow: 1px 1px 1px grey;
+}
+
+#section-buttons {
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+#section-buttons button H3 {
+    margin: 5px;
+    color: #7A736E;
+}
+
+#section-buttons #button-menu-cm,
+#section-buttons #button-menu-im,
+#section-buttons #button-menu-pm,
+#section-buttons #button-menu-bo,
+#section-buttons #button-menu-ho {
+    background-color: #E9E1CA;
+    border: transparent;
+    box-shadow: 2px 2px 2px grey;
+}
+
+#section-buttons #button-menu-cm:hover,
+#section-buttons #button-menu-im:hover,
+#section-buttons #button-menu-pm:hover,
+#section-buttons #button-menu-bo:hover,
+#section-buttons #button-menu-ho:hover {
+    background-color: #AA643B;
+}
+
+#section-buttons #button-menu-cm:hover H3,
+#section-buttons #button-menu-im:hover H3,
+#section-buttons #button-menu-pm:hover H3,
+#section-buttons #button-menu-bo:hover H3,
+#section-buttons #button-menu-ho:hover H3 {
+    color: #E9E1CA;
+}
+
+button#button-menu-cm,
+button#button-menu-im,
+button#button-menu-pm {
+    margin-right: 8%;
+}
+
+button#button-menu-bo,
+button#button-menu-ho {
+    margin-right: 8%;
+}
+
+#section-0,
+#section-2,
+#section-3,
+#section-4 {
+    margin: 2% 5%;
+    text-align: left;
+}
+
+#section-1 {
+    margin: 5% 5%;
+    text-align: left;
+}
+
+#section-0 select#status,
+#section-0 select#enviroment,
+#section-2 select#status,
+#section-2 select#enviroment,
+#section-3 select#status,
+#section-3 select#enviroment,
+#section-4 select#status,
+#section-4 select#enviroment {
+    height: 21.5px;
+    width: 8.5%;
+}
+
+#section-0 input,
+#section-2 input,
+#section-3 input,
+#section-4 input {
+    width: 8%;
+}
+
+#section-0 input#summary,
+#section-0 input#im_summary,
+#section-0 input#pm_summary,
+#section-0 input#blackout_summary,
+#section-2 input#summary,
+#section-2 input#im_summary,
+#section-2 input#pm_summary,
+#section-2 input#blackout_summary,
+#section-3 input#summary,
+#section-3 input#im_summary,
+#section-3 input#pm_summary,
+#section-3 input#blackout_summary,
+#section-4 input#summary,
+#section-4 input#im_summary,
+#section-4 input#pm_summary,
+#section-4 input#blackout_summary {
+    width: 34%;
+}
+
+#section-0 input#date,
+#section-0 input#im_obs,
+#section-0 input#pm_obs,
+#section-2 input#date,
+#section-2 input#im_obs,
+#section-2 input#pm_obs,
+#section-3 input#date,
+#section-3 input#im_obs,
+#section-3 input#pm_obs,
+#section-4 input#date,
+#section-4 input#im_obs,
+#section-4 input#pm_obs {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+#section-0 input#blackout_cm_id,
+#section-2 input#blackout_cm_id,
+#section-3 input#blackout_cm_id,
+#section-4 input#blackout_cm_id {
+    margin-bottom: 0.5%;
+}
+
+#section-0 input#obs,
+#section-2 input#obs,
+#section-3 input#obs,
+#section-4 input#obs {
+    width: 42.8%;
+}
+
+#section-0 input#im_obs,
+#section-0 input#pm_obs,
+#section-2 input#im_obs,
+#section-2 input#pm_obs,
+#section-3 input#im_obs,
+#section-3 input#pm_obs,
+#section-4 input#im_obs,
+#section-4 input#pm_obs {
+    width: 51.6%;
+}
+
+button#button-add {
+    margin-bottom: 0.5%;
+}
+
+#myTable-prod,
+#myTable-xcomp,
+#myTable-training,
+#myTable-test,
+#myTable-dev,
+#myTable-perftest,
+#myTable-sit,
+#myTable-uat,
+#myTable-rtest,
+#myTable-Decommission,
+#myTable-ims,
+#myTable-pms,
+#myTable-blackouts {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#myTable-prod td,
+#myTable-prod th,
+#myTable-xcomp td,
+#myTable-xcomp th,
+#myTable-training td,
+#myTable-training th,
+#myTable-test td,
+#myTable-test th,
+#myTable-dev td,
+#myTable-dev th,
+#myTable-perftest td,
+#myTable-perftest th,
+#myTable-sit td,
+#myTable-sit th,
+#myTable-uat td,
+#myTable-uat th,
+#myTable-rtest td,
+#myTable-rtest th,
+#myTable-Decommission td,
+#myTable-Decommission th,
+#myTable-ims td,
+#myTable-ims th,
+#myTable-pms td,
+#myTable-pms th,
+#myTable-blackouts td,
+#myTable-blackouts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTable-prod tr:nth-child(even) td.cm,
+#myTable-prod tr:nth-child(even) td.status,
+#myTable-prod tr:nth-child(even) td.stask,
+#myTable-prod tr:nth-child(even) td.summary,
+#myTable-prod tr:nth-child(even) td.date,
+#myTable-prod tr:nth-child(even) td.implementer,
+#myTable-prod tr:nth-child(even) td.obs,
+#myTable-prod tr:nth-child(even) td.waiting,
+#myTable-prod tr:nth-child(even) input,
+#myTable-xcomp tr:nth-child(even) td.cm,
+#myTable-xcomp tr:nth-child(even) td.status,
+#myTable-xcomp tr:nth-child(even) td.stask,
+#myTable-xcomp tr:nth-child(even) td.summary,
+#myTable-xcomp tr:nth-child(even) td.date,
+#myTable-xcomp tr:nth-child(even) td.implementer,
+#myTable-xcomp tr:nth-child(even) td.obs,
+#myTable-xcomp tr:nth-child(even) td.waiting,
+#myTable-xcomp tr:nth-child(even) input,
+#myTable-training tr:nth-child(even) td.cm,
+#myTable-training tr:nth-child(even) td.status,
+#myTable-training tr:nth-child(even) td.stask,
+#myTable-training tr:nth-child(even) td.summary,
+#myTable-training tr:nth-child(even) td.date,
+#myTable-training tr:nth-child(even) td.implementer,
+#myTable-training tr:nth-child(even) td.obs,
+#myTable-training tr:nth-child(even) td.waiting,
+#myTable-training tr:nth-child(even) input,
+#myTable-test tr:nth-child(even) td.cm,
+#myTable-test tr:nth-child(even) td.status,
+#myTable-test tr:nth-child(even) td.stask,
+#myTable-test tr:nth-child(even) td.summary,
+#myTable-test tr:nth-child(even) td.date,
+#myTable-test tr:nth-child(even) td.implementer,
+#myTable-test tr:nth-child(even) td.obs,
+#myTable-test tr:nth-child(even) td.waiting,
+#myTable-test tr:nth-child(even) input,
+#myTable-dev tr:nth-child(even) td.cm,
+#myTable-dev tr:nth-child(even) td.status,
+#myTable-dev tr:nth-child(even) td.stask,
+#myTable-dev tr:nth-child(even) td.summary,
+#myTable-dev tr:nth-child(even) td.date,
+#myTable-dev tr:nth-child(even) td.implementer,
+#myTable-dev tr:nth-child(even) td.obs,
+#myTable-dev tr:nth-child(even) td.waiting,
+#myTable-dev tr:nth-child(even) input,
+#myTable-perftest tr:nth-child(even) td.cm,
+#myTable-perftest tr:nth-child(even) td.status,
+#myTable-perftest tr:nth-child(even) td.stask,
+#myTable-perftest tr:nth-child(even) td.summary,
+#myTable-perftest tr:nth-child(even) td.date,
+#myTable-perftest tr:nth-child(even) td.implementer,
+#myTable-perftest tr:nth-child(even) td.obs,
+#myTable-perftest tr:nth-child(even) td.waiting,
+#myTable-perftest tr:nth-child(even) input,
+#myTable-sit tr:nth-child(even) td.cm,
+#myTable-sit tr:nth-child(even) td.status,
+#myTable-sit tr:nth-child(even) td.stask,
+#myTable-sit tr:nth-child(even) td.summary,
+#myTable-sit tr:nth-child(even) td.date,
+#myTable-sit tr:nth-child(even) td.implementer,
+#myTable-sit tr:nth-child(even) td.obs,
+#myTable-sit tr:nth-child(even) td.waiting,
+#myTable-sit tr:nth-child(even) input,
+#myTable-uat tr:nth-child(even) td.cm,
+#myTable-uat tr:nth-child(even) td.status,
+#myTable-uat tr:nth-child(even) td.stask,
+#myTable-uat tr:nth-child(even) td.summary,
+#myTable-uat tr:nth-child(even) td.date,
+#myTable-uat tr:nth-child(even) td.implementer,
+#myTable-uat tr:nth-child(even) td.obs,
+#myTable-uat tr:nth-child(even) td.waiting,
+#myTable-uat tr:nth-child(even) input,
+#myTable-rtest tr:nth-child(even) td.cm,
+#myTable-rtest tr:nth-child(even) td.status,
+#myTable-rtest tr:nth-child(even) td.stask,
+#myTable-rtest tr:nth-child(even) td.summary,
+#myTable-rtest tr:nth-child(even) td.date,
+#myTable-rtest tr:nth-child(even) td.implementer,
+#myTable-rtest tr:nth-child(even) td.obs,
+#myTable-rtest tr:nth-child(even) td.waiting,
+#myTable-rtest tr:nth-child(even) input,
+#myTable-Decommission tr:nth-child(even) td.cm,
+#myTable-Decommission tr:nth-child(even) td.status,
+#myTable-Decommission tr:nth-child(even) td.stask,
+#myTable-Decommission tr:nth-child(even) td.summary,
+#myTable-Decommission tr:nth-child(even) td.date,
+#myTable-Decommission tr:nth-child(even) td.implementer,
+#myTable-Decommission tr:nth-child(even) td.obs,
+#myTable-Decommission tr:nth-child(even) td.waiting,
+#myTable-Decommission tr:nth-child(even) input,
+#myTable-ims tr:nth-child(even) td.im,
+#myTable-ims tr:nth-child(even) td.stask,
+#myTable-ims tr:nth-child(even) td.summary,
+#myTable-ims tr:nth-child(even) td.implementer,
+#myTable-ims tr:nth-child(even) td.obs,
+#myTable-ims tr:nth-child(even) td.waiting,
+#myTable-ims tr:nth-child(even) input,
+#myTable-pms tr:nth-child(even) td.pm,
+#myTable-pms tr:nth-child(even) td.stask,
+#myTable-pms tr:nth-child(even) td.summary,
+#myTable-pms tr:nth-child(even) td.implementer,
+#myTable-pms tr:nth-child(even) td.obs,
+#myTable-pms tr:nth-child(even) td.waiting,
+#myTable-pms tr:nth-child(even) input,
+#myTable-blackouts tr:nth-child(even) td.cm,
+#myTable-blackouts tr:nth-child(even) td.stask,
+#myTable-blackouts tr:nth-child(even) td.ir,
+#myTable-blackouts tr:nth-child(even) td.summary,
+#myTable-blackouts tr:nth-child(even) input {
+    background-color: #f2f2f2;
+}
+
+#myTable-prod tr td.cm,
+#myTable-prod tr td.status,
+#myTable-prod tr td.stask,
+#myTable-prod tr td.summary,
+#myTable-prod tr td.date,
+#myTable-prod tr td.implementer,
+#myTable-prod tr td.obs,
+#myTable-prod tr td.waiting,
+#myTable-xcomp tr td.cm,
+#myTable-xcomp tr td.status,
+#myTable-xcomp tr td.stask,
+#myTable-xcomp tr td.summary,
+#myTable-xcomp tr td.date,
+#myTable-xcomp tr td.implementer,
+#myTable-xcomp tr td.obs,
+#myTable-xcomp tr td.waiting,
+#myTable-training tr td.cm,
+#myTable-training tr td.status,
+#myTable-training tr td.stask,
+#myTable-training tr td.summary,
+#myTable-training tr td.date,
+#myTable-training tr td.implementer,
+#myTable-training tr td.obs,
+#myTable-training tr td.waiting,
+#myTable-test tr td.cm,
+#myTable-test tr td.status,
+#myTable-test tr td.stask,
+#myTable-test tr td.summary,
+#myTable-test tr td.date,
+#myTable-test tr td.implementer,
+#myTable-test tr td.obs,
+#myTable-test tr td.waiting,
+#myTable-dev tr td.cm,
+#myTable-dev tr td.status,
+#myTable-dev tr td.stask,
+#myTable-dev tr td.summary,
+#myTable-dev tr td.date,
+#myTable-dev tr td.implementer,
+#myTable-dev tr td.obs,
+#myTable-dev tr td.waiting,
+#myTable-perftest tr td.cm,
+#myTable-perftest tr td.status,
+#myTable-perftest tr td.stask,
+#myTable-perftest tr td.summary,
+#myTable-perftest tr td.date,
+#myTable-perftest tr td.implementer,
+#myTable-perftest tr td.obs,
+#myTable-perftest tr td.waiting,
+#myTable-sit tr td.cm,
+#myTable-sit tr td.status,
+#myTable-sit tr td.stask,
+#myTable-sit tr td.summary,
+#myTable-sit tr td.date,
+#myTable-sit tr td.implementer,
+#myTable-sit tr td.obs,
+#myTable-sit tr td.waiting,
+#myTable-uat tr td.cm,
+#myTable-uat tr td.status,
+#myTable-uat tr td.stask,
+#myTable-uat tr td.summary,
+#myTable-uat tr td.date,
+#myTable-uat tr td.implementer,
+#myTable-uat tr td.obs,
+#myTable-uat tr td.waiting,
+#myTable-rtest tr td.cm,
+#myTable-rtest tr td.status,
+#myTable-rtest tr td.stask,
+#myTable-rtest tr td.summary,
+#myTable-rtest tr td.date,
+#myTable-rtest tr td.implementer,
+#myTable-rtest tr td.obs,
+#myTable-rtest tr td.waiting,
+#myTable-Decommission tr td.cm,
+#myTable-Decommission tr td.status,
+#myTable-Decommission tr td.stask,
+#myTable-Decommission tr td.summary,
+#myTable-Decommission tr td.date,
+#myTable-Decommission tr td.implementer,
+#myTable-Decommission tr td.obs,
+#myTable-Decommission tr td.waiting,
+#myTable-ims tr td.im,
+#myTable-ims tr td.stask,
+#myTable-ims tr td.summary,
+#myTable-ims tr td.implementer,
+#myTable-ims tr td.obs,
+#myTable-ims tr td.waiting,
+#myTable-pms tr td.pm,
+#myTable-pms tr td.stask,
+#myTable-pms tr td.summary,
+#myTable-pms tr td.implementer,
+#myTable-pms tr td.obs,
+#myTable-pms tr td.waiting,
+#myTable-blackouts tr td.cm,
+#myTable-blackouts tr td.stask,
+#myTable-blackouts tr td.ir,
+#myTable-blackouts tr td.summary {
+    background-color: #ffffff;
+}
+
+#myTable-prod tr:hover td.cm,
+#myTable-prod tr:hover td.status,
+#myTable-prod tr:hover td.stask,
+#myTable-prod tr:hover td.summary,
+#myTable-prod tr:hover td.date,
+#myTable-prod tr:hover td.implementer,
+#myTable-prod tr:hover td.obs,
+#myTable-prod tr:hover td.waiting,
+#myTable-prod tr:hover input,
+#myTable-prod tr:nth-child(even):hover input#del_id,
+#myTable-prod tr:nth-child(even):hover input.date,
+#myTable-prod tr:nth-child(even):hover textarea,
+#myTable-prod tr:hover textarea,
+#myTable-xcomp tr:hover td.cm,
+#myTable-xcomp tr:hover td.status,
+#myTable-xcomp tr:hover td.stask,
+#myTable-xcomp tr:hover td.summary,
+#myTable-xcomp tr:hover td.date,
+#myTable-xcomp tr:hover td.implementer,
+#myTable-xcomp tr:hover td.obs,
+#myTable-xcomp tr:hover td.waiting,
+#myTable-xcomp tr:hover input,
+#myTable-xcomp tr:nth-child(even):hover input#del_id,
+#myTable-xcomp tr:nth-child(even):hover input.date,
+#myTable-xcomp tr:nth-child(even):hover textarea,
+#myTable-xcomp tr:hover textarea,
+#myTable-training tr:hover td.cm,
+#myTable-training tr:hover td.status,
+#myTable-training tr:hover td.stask,
+#myTable-training tr:hover td.summary,
+#myTable-training tr:hover td.date,
+#myTable-training tr:hover td.implementer,
+#myTable-training tr:hover td.obs,
+#myTable-training tr:hover td.waiting,
+#myTable-training tr:hover input,
+#myTable-training tr:nth-child(even):hover input#del_id,
+#myTable-training tr:nth-child(even):hover input.date,
+button.button:hover,
+#myTable-training tr:nth-child(even):hover textarea,
+#myTable-training tr:hover textarea,
+#myTable-test tr:hover td.cm,
+#myTable-test tr:hover td.status,
+#myTable-test tr:hover td.stask,
+#myTable-test tr:hover td.summary,
+#myTable-test tr:hover td.date,
+#myTable-test tr:hover td.implementer,
+#myTable-test tr:hover td.obs,
+#myTable-test tr:hover td.waiting,
+#myTable-test tr:hover input,
+#myTable-test tr:nth-child(even):hover input#del_id,
+#myTable-test tr:nth-child(even):hover input.date,
+#myTable-test tr:nth-child(even):hover textarea,
+#myTable-test tr:hover textarea,
+#myTable-dev tr:hover td.cm,
+#myTable-dev tr:hover td.status,
+#myTable-dev tr:hover td.stask,
+#myTable-dev tr:hover td.summary,
+#myTable-dev tr:hover td.date,
+#myTable-dev tr:hover td.implementer,
+#myTable-dev tr:hover td.obs,
+#myTable-dev tr:hover td.waiting,
+#myTable-dev tr:hover input,
+#myTable-dev tr:nth-child(even):hover input#del_id,
+#myTable-dev tr:nth-child(even):hover input.date,
+#myTable-dev tr:nth-child(even):hover textarea,
+#myTable-dev tr:hover textarea,
+#myTable-perftest tr:hover td.cm,
+#myTable-perftest tr:hover td.status,
+#myTable-perftest tr:hover td.stask,
+#myTable-perftest tr:hover td.summary,
+#myTable-perftest tr:hover td.date,
+#myTable-perftest tr:hover td.implementer,
+#myTable-perftest tr:hover td.obs,
+#myTable-perftest tr:hover td.waiting,
+#myTable-perftest tr:hover input,
+#myTable-perftest tr:nth-child(even):hover input#del_id,
+#myTable-perftest tr:nth-child(even):hover input.date,
+#myTable-perftest tr:nth-child(even):hover textarea,
+#myTable-perftest tr:hover textarea,
+#myTable-sit tr:hover td.cm,
+#myTable-sit tr:hover td.status,
+#myTable-sit tr:hover td.stask,
+#myTable-sit tr:hover td.summary,
+#myTable-sit tr:hover td.date,
+#myTable-sit tr:hover td.implementer,
+#myTable-sit tr:hover td.obs,
+#myTable-sit tr:hover td.waiting,
+#myTable-sit tr:hover input,
+#myTable-sit tr:nth-child(even):hover input#del_id,
+#myTable-sit tr:nth-child(even):hover input.date,
+#myTable-sit tr:nth-child(even):hover textarea,
+#myTable-sit tr:hover textarea,
+#myTable-uat tr:hover td.cm,
+#myTable-uat tr:hover td.status,
+#myTable-uat tr:hover td.stask,
+#myTable-uat tr:hover td.summary,
+#myTable-uat tr:hover td.date,
+#myTable-uat tr:hover td.implementer,
+#myTable-uat tr:hover td.obs,
+#myTable-uat tr:hover td.waiting,
+#myTable-uat tr:hover input,
+#myTable-uat tr:nth-child(even):hover input#del_id,
+#myTable-uat tr:nth-child(even):hover input.date,
+#myTable-uat tr:nth-child(even):hover textarea,
+#myTable-uat tr:hover textarea,
+#myTable-rtest tr:hover td.cm,
+#myTable-rtest tr:hover td.status,
+#myTable-rtest tr:hover td.stask,
+#myTable-rtest tr:hover td.summary,
+#myTable-rtest tr:hover td.date,
+#myTable-rtest tr:hover td.implementer,
+#myTable-rtest tr:hover td.obs,
+#myTable-rtest tr:hover td.waiting,
+#myTable-rtest tr:hover input,
+#myTable-rtest tr:nth-child(even):hover input#del_id,
+#myTable-rtest tr:nth-child(even):hover input.date,
+#myTable-rtest tr:nth-child(even):hover textarea,
+#myTable-rtest tr:hover textarea,
+#myTable-Decommission tr:hover td.cm,
+#myTable-Decommission tr:hover td.status,
+#myTable-Decommission tr:hover td.stask,
+#myTable-Decommission tr:hover td.summary,
+#myTable-Decommission tr:hover td.date,
+#myTable-Decommission tr:hover td.implementer,
+#myTable-Decommission tr:hover td.obs,
+#myTable-Decommission tr:hover td.waiting,
+#myTable-Decommission tr:hover input,
+#myTable-Decommission tr:nth-child(even):hover input#del_id,
+#myTable-Decommission tr:nth-child(even):hover input.date,
+#myTable-Decommission tr:nth-child(even):hover textarea,
+#myTable-Decommission tr:hover textarea,
+#myTable-ims tr:hover td.im,
+#myTable-ims tr:hover td.stask,
+#myTable-ims tr:hover td.summary,
+#myTable-ims tr:hover td.implementer,
+#myTable-ims tr:hover td.obs,
+#myTable-ims tr:hover td.waiting,
+#myTable-ims tr:hover input,
+#myTable-ims tr:nth-child(even):hover input#del_id,
+#myTable-ims tr:nth-child(even):hover textarea,
+#myTable-ims tr:hover textarea,
+#myTable-pms tr:hover td.pm,
+#myTable-pms tr:hover td.stask,
+#myTable-pms tr:hover td.summary,
+#myTable-pms tr:hover td.implementer,
+#myTable-pms tr:hover td.obs,
+#myTable-pms tr:hover td.waiting,
+#myTable-pms tr:hover input,
+#myTable-pms tr:nth-child(even):hover input#del_id,
+#myTable-pms tr:nth-child(even):hover textarea,
+#myTable-pms tr:hover textarea,
+#myTable-blackouts tr:hover td.cm,
+#myTable-blackouts tr:hover td.stask,
+#myTable-blackouts tr:hover td.ir,
+#myTable-blackouts tr:hover td.summary,
+#myTable-blackouts tr:hover input,
+#myTable-blackouts tr:nth-child(even):hover input#del_id,
+#myTable-blackouts tr:nth-child(even):hover textarea,
+#myTable-blackouts tr:hover textarea {
+    background-color: #ddd;
+}
+
+#myTable-prod tr:nth-child(even) td.del,
+#myTable-xcomp tr:nth-child(even) td.del,
+#myTable-training tr:nth-child(even) td.del,
+#myTable-test tr:nth-child(even) td.del,
+#myTable-dev tr:nth-child(even) td.del,
+#myTable-perftest tr:nth-child(even) td.del,
+#myTable-sit tr:nth-child(even) td.del,
+#myTable-uat tr:nth-child(even) td.del,
+#myTable-rtest tr:nth-child(even) td.del,
+#myTable-Decommission tr:nth-child(even) td.del,
+#myTable-ims tr:nth-child(even) td.del,
+#myTable-pms tr:nth-child(even) td.del,
+#myTable-blackouts tr:nth-child(even) td.del {
+    background-color: E5E5E5;
+}
+
+#myTable-prod tr td.del,
+#myTable-xcomp tr td.del,
+#myTable-training tr td.del,
+#myTable-test tr td.del,
+#myTable-dev tr td.del,
+#myTable-perftest tr td.del,
+#myTable-sit tr td.del,
+#myTable-uat tr td.del,
+#myTable-rtest tr td.del,
+#myTable-Decommission tr td.del,
+#myTable-ims tr td.del,
+#myTable-pms tr td.del,
+#myTable-blackouts tr td.del {
+    background-color: E5E5E5;
+}
+
+#myTable-prod tr:nth-child(even) input#del_id,
+#myTable-xcomp tr:nth-child(even) input#del_id,
+#myTable-training tr:nth-child(even) input#del_id,
+#myTable-test tr:nth-child(even) input#del_id,
+#myTable-dev tr:nth-child(even) input#del_id,
+#myTable-perftest tr:nth-child(even) input#del_id,
+#myTable-sit tr:nth-child(even) input#del_id,
+#myTable-uat tr:nth-child(even) input#del_id,
+#myTable-rtest tr:nth-child(even) input#del_id,
+#myTable-Decommission tr:nth-child(even) input#del_id,
+#myTable-ims tr:nth-child(even) input#del_id,
+#myTable-pms tr:nth-child(even) input#del_id,
+#myTable-blackouts tr:nth-child(even) input#del_id {
+    border: 1px solid grey;
+    background-color: #7A736E;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #7A736E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#myTable-prod th.cm,
+#myTable-prod th.status,
+#myTable-prod th.enviroment,
+#myTable-prod th.stask,
+#myTable-prod th.summary,
+#myTable-prod th.date,
+#myTable-prod th.implementer,
+#myTable-prod th.obs,
+#myTable-prod th.waiting,
+#myTable-xcomp th.cm,
+#myTable-xcomp th.status,
+#myTable-xcomp th.enviroment,
+#myTable-xcomp th.stask,
+#myTable-xcomp th.summary,
+#myTable-xcomp th.date,
+#myTable-xcomp th.implementer,
+#myTable-xcomp th.obs,
+#myTable-xcomp th.waiting,
+#myTable-training th.cm,
+#myTable-training th.status,
+#myTable-training th.enviroment,
+#myTable-training th.stask,
+#myTable-training th.summary,
+#myTable-training th.date,
+#myTable-training th.implementer,
+#myTable-training th.obs,
+#myTable-training th.waiting,
+#myTable-test th.cm,
+#myTable-test th.status,
+#myTable-test th.enviroment,
+#myTable-test th.stask,
+#myTable-test th.summary,
+#myTable-test th.date,
+#myTable-test th.implementer,
+#myTable-test th.obs,
+#myTable-test th.waiting,
+#myTable-dev th.cm,
+#myTable-dev th.status,
+#myTable-dev th.enviroment,
+#myTable-dev th.stask,
+#myTable-dev th.summary,
+#myTable-dev th.date,
+#myTable-dev th.implementer,
+#myTable-dev th.obs,
+#myTable-dev th.waiting,
+#myTable-perftest th.cm,
+#myTable-perftest th.status,
+#myTable-perftest th.enviroment,
+#myTable-perftest th.stask,
+#myTable-perftest th.summary,
+#myTable-perftest th.date,
+#myTable-perftest th.implementer,
+#myTable-perftest th.obs,
+#myTable-perftest th.waiting,
+#myTable-sit th.cm,
+#myTable-sit th.status,
+#myTable-sit th.enviroment,
+#myTable-sit th.stask,
+#myTable-sit th.summary,
+#myTable-sit th.date,
+#myTable-sit th.implementer,
+#myTable-sit th.obs,
+#myTable-sit th.waiting,
+#myTable-uat th.cm,
+#myTable-uat th.status,
+#myTable-uat th.enviroment,
+#myTable-uat th.stask,
+#myTable-uat th.summary,
+#myTable-uat th.date,
+#myTable-uat th.implementer,
+#myTable-uat th.obs,
+#myTable-uat th.waiting,
+#myTable-rtest th.cm,
+#myTable-rtest th.status,
+#myTable-rtest th.enviroment,
+#myTable-rtest th.stask,
+#myTable-rtest th.summary,
+#myTable-rtest th.date,
+#myTable-rtest th.implementer,
+#myTable-rtest th.obs,
+#myTable-rtest th.waiting,
+#myTable-Decommission th.cm,
+#myTable-Decommission th.status,
+#myTable-Decommission th.enviroment,
+#myTable-Decommission th.stask,
+#myTable-Decommission th.summary,
+#myTable-Decommission th.date,
+#myTable-Decommission th.implementer,
+#myTable-Decommission th.obs,
+#myTable-Decommission th.waiting,
+#myTable-ims th.im,
+#myTable-ims th.stask,
+#myTable-ims th.summary,
+#myTable-ims th.implementer,
+#myTable-ims th.obs,
+#myTable-ims th.waiting,
+#myTable-pms th.pm,
+#myTable-pms th.stask,
+#myTable-pms th.summary,
+#myTable-pms th.implementer,
+#myTable-pms th.obs,
+#myTable-pms th.waiting,
+#myTable-blackouts th.cm,
+#myTable-blackouts th.stask,
+#myTable-blackouts th.ir,
+#myTable-blackouts th.summary {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7A736E;
+    color: white;
+}
+
+#myTable-prod td.del,
+#myTable-prod th.del,
+#myTable-xcomp td.del,
+#myTable-xcomp th.del,
+#myTable-training td.del,
+#myTable-training th.del,
+#myTable-test td.del,
+#myTable-test th.del,
+#myTable-dev td.del,
+#myTable-dev th.del,
+#myTable-perftest td.del,
+#myTable-perftest th.del,
+#myTable-sit td.del,
+#myTable-sit th.del,
+#myTable-uat td.del,
+#myTable-uat th.del,
+#myTable-rtest td.del,
+#myTable-rtest th.del,
+#myTable-Decommission td.del,
+#myTable-Decommission th.del,
+#myTable-ims td.del,
+#myTable-ims th.del,
+#myTable-pms td.del,
+#myTable-pms th.del,
+#myTable-blackouts td.del,
+#myTable-blackouts th.del {
+    background-color: E5E5E5;
+    border: none;
+}
+
+#myTable-prod th.cm,
+#myTable-prod td.cm,
+#myTable-prod input.cm,
+#myTable-prod th.stask,
+#myTable-prod td.stask,
+#myTable-prod input.stask,
+#myTable-xcomp th.cm,
+#myTable-xcomp td.cm,
+#myTable-xcomp input.cm,
+#myTable-xcomp th.stask,
+#myTable-xcomp td.stask,
+#myTable-xcomp input.stask,
+#myTable-training th.cm,
+#myTable-training td.cm,
+#myTable-training input.cm,
+#myTable-training th.stask,
+#myTable-training td.stask,
+#myTable-training input.stask,
+#myTable-test th.cm,
+#myTable-test td.cm,
+#myTable-test input.cm,
+#myTable-test th.stask,
+#myTable-test td.stask,
+#myTable-test input.stask,
+#myTable-dev th.cm,
+#myTable-dev td.cm,
+#myTable-dev input.cm,
+#myTable-dev th.stask,
+#myTable-dev td.stask,
+#myTable-dev input.stask,
+#myTable-perftest th.cm,
+#myTable-perftest td.cm,
+#myTable-perftest input.cm,
+#myTable-perftest th.stask,
+#myTable-perftest td.stask,
+#myTable-perftest input.stask,
+#myTable-sit th.cm,
+#myTable-sit td.cm,
+#myTable-sit input.cm,
+#myTable-sit th.stask,
+#myTable-sit td.stask,
+#myTable-sit input.stask,
+#myTable-uat th.cm,
+#myTable-uat td.cm,
+#myTable-uat input.cm,
+#myTable-uat th.stask,
+#myTable-uat td.stask,
+#myTable-uat input.stask,
+#myTable-rtest th.cm,
+#myTable-rtest td.cm,
+#myTable-rtest input.cm,
+#myTable-rtest th.stask,
+#myTable-rtest td.stask,
+#myTable-rtest input.stask,
+#myTable-Decommission th.cm,
+#myTable-Decommission td.cm,
+#myTable-Decommission input.cm,
+#myTable-Decommission th.stask,
+#myTable-Decommission td.stask,
+#myTable-Decommission input.stask,
+#myTable-ims th.im,
+#myTable-ims td.im,
+#myTable-ims input.im,
+#myTable-ims th.stask,
+#myTable-ims td.stask,
+#myTable-ims input.stask,
+#myTable-pms th.pm,
+#myTable-pms td.pm,
+#myTable-pms input.pm,
+#myTable-pms th.stask,
+#myTable-pms td.stask,
+#myTable-pms input.stask,
+#myTable-blackouts th.cm,
+#myTable-blackouts td.cm,
+#myTable-blackouts input.cm,
+#myTable-blackouts th.stask,
+#myTable-blackouts td.stask,
+#myTable-blackouts input.stask,
+#myTable-blackouts th.ir,
+#myTable-blackouts td.ir,
+#myTable-blackouts input.ir {
+    width: auto;
+}
+
+#myTable-prod th.status,
+#myTable-prod td.status,
+#myTable-prod select#status,
+#myTable-xcomp th.status,
+#myTable-xcomp td.status,
+#myTable-xcomp select#status,
+#myTable-training th.status,
+#myTable-training td.status,
+#myTable-training select#status,
+#myTable-test th.status,
+#myTable-test td.status,
+#myTable-test select#status,
+#myTable-dev th.status,
+#myTable-dev td.status,
+#myTable-dev select#status,
+#myTable-perftest th.status,
+#myTable-perftest td.status,
+#myTable-perftest select#status,
+#myTable-sit th.status,
+#myTable-sit td.status,
+#myTable-sit select#status,
+#myTable-uat th.status,
+#myTable-uat td.status,
+#myTable-uat select#status,
+#myTable-rtest th.status,
+#myTable-rtest td.status,
+#myTable-rtest select#status,
+#myTable-Decommission th.status,
+#myTable-Decommission td.status,
+#myTable-Decommission select#status {
+    width: auto;
+}
+
+#myTable-prod th.enviroment,
+#myTable-xcomp th.enviroment,
+#myTable-training th.enviroment,
+#myTable-test th.enviroment,
+#myTable-dev th.enviroment,
+#myTable-perftest th.enviroment,
+#myTable-sit th.enviroment,
+#myTable-uat th.enviroment,
+#myTable-rtest th.enviroment,
+#myTable-Decommission th.enviroment {
+    width: auto;
+}
+
+#myTable-prod th.summary,
+#myTable-prod td.summary,
+#myTable-prod th.obs,
+#myTable-prod td.obs,
+#myTable-xcomp th.summary,
+#myTable-xcomp td.summary,
+#myTable-xcomp th.obs,
+#myTable-xcomp td.obs,
+#myTable-training th.summary,
+#myTable-training td.summary,
+#myTable-training th.obs,
+#myTable-training td.obs,
+#myTable-test th.summary,
+#myTable-test td.summary,
+#myTable-test th.obs,
+#myTable-test td.obs,
+#myTable-dev th.summary,
+#myTable-dev td.summary,
+#myTable-dev th.obs,
+#myTable-dev td.obs,
+#myTable-perftest th.summary,
+#myTable-perftest td.summary,
+#myTable-perftest th.obs,
+#myTable-perftest td.obs,
+#myTable-sit th.summary,
+#myTable-sit td.summary,
+#myTable-sit th.obs,
+#myTable-sit td.obs,
+#myTable-uat th.summary,
+#myTable-uat td.summary,
+#myTable-uat th.obs,
+#myTable-uat td.obs,
+#myTable-rtest th.summary,
+#myTable-rtest td.summary,
+#myTable-rtest th.obs,
+#myTable-rtest td.obs,
+#myTable-Decommission th.summary,
+#myTable-Decommission td.summary,
+#myTable-Decommission th.obs,
+#myTable-Decommission td.obs {
+    width: auto;
+}
+
+#myTable-ims th.summary,
+#myTable-ims td.summary,
+#myTable-ims th.obs,
+#myTable-ims td.obs,
+#myTable-pms th.summary,
+#myTable-pms td.summary,
+#myTable-pms th.obs,
+#myTable-pms td.obs,
+#myTable-blackouts th.summary,
+#myTable-blackouts td.summary {
+    width: auto;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    resize: vertical;
+    min-height: 15px;
+    border: none;
+}
+
+#myTable-prod tr textarea,
+#myTable-xcomp tr textarea,
+#myTable-training tr textarea,
+#myTable-test tr textarea,
+#myTable-dev tr textarea,
+#myTable-perftest tr textarea,
+#myTable-sit tr textarea,
+#myTable-uat tr textarea,
+#myTable-rtest tr textarea,
+#myTable-Decommission tr textarea,
+#myTable-ims tr textarea,
+#myTable-pms tr textarea,
+#myTable-blackouts tr textarea {
+    background-color: #ffffff;
+}
+
+#myTable-prod tr:nth-child(even) textarea,
+#myTable-xcomp tr:nth-child(even) textarea,
+#myTable-training tr:nth-child(even) textarea,
+#myTable-test tr:nth-child(even) textarea,
+#myTable-dev tr:nth-child(even) textarea,
+#myTable-perftest tr:nth-child(even) textarea,
+#myTable-sit tr:nth-child(even) textarea,
+#myTable-uat tr:nth-child(even) textarea,
+#myTable-rtest tr:nth-child(even) textarea,
+#myTable-Decommission tr:nth-child(even) textarea,
+#myTable-ims tr:nth-child(even) textarea,
+#myTable-pms tr:nth-child(even) textarea,
+#myTable-blackouts tr:nth-child(even) textarea {
+    background-color: #f2f2f2;
+}
+
+#myTable-prod th.date,
+#myTable-prod td.date,
+#myTable-prod input.date,
+#myTable-xcomp th.date,
+#myTable-xcomp td.date,
+#myTable-xcomp input.date,
+#myTable-training th.date,
+#myTable-training td.date,
+#myTable-training input.date,
+#myTable-test th.date,
+#myTable-test td.date,
+#myTable-test input.date,
+#myTable-dev th.date,
+#myTable-dev td.date,
+#myTable-dev input.date,
+#myTable-perftest th.date,
+#myTable-perftest td.date,
+#myTable-perftest input.date,
+#myTable-sit th.date,
+#myTable-sit td.date,
+#myTable-sit input.date,
+#myTable-uat th.date,
+#myTable-uat td.date,
+#myTable-uat input.date,
+#myTable-rtest th.date,
+#myTable-rtest td.date,
+#myTable-rtest input.date,
+#myTable-Decommission th.date,
+#myTable-Decommission td.date,
+#myTable-Decommission input.date {
+    width: auto;
+}
+
+#myTable-prod th.implementer,
+#myTable-prod td.implementer,
+#myTable-prod input.implementer,
+#myTable-prod th.waiting,
+#myTable-prod td.waiting,
+#myTable-prod input.waiting,
+#myTable-xcomp th.implementer,
+#myTable-xcomp td.implementer,
+#myTable-xcomp input.implementer,
+#myTable-xcomp th.waiting,
+#myTable-xcomp td.waiting,
+#myTable-xcomp input.waiting,
+#myTable-training th.implementer,
+#myTable-training td.implementer,
+#myTable-training input.implementer,
+#myTable-training th.waiting,
+#myTable-training td.waiting,
+#myTable-training input.waiting,
+#myTable-test th.implementer,
+#myTable-test td.implementer,
+#myTable-test input.implementer,
+#myTable-test th.waiting,
+#myTable-test td.waiting,
+#myTable-test input.waiting,
+#myTable-dev th.implementer,
+#myTable-dev td.implementer,
+#myTable-dev input.implementer,
+#myTable-dev th.waiting,
+#myTable-dev td.waiting,
+#myTable-dev input.waiting,
+#myTable-perftest th.implementer,
+#myTable-perftest td.implementer,
+#myTable-perftest input.implementer,
+#myTable-perftest th.waiting,
+#myTable-perftest td.waiting,
+#myTable-perftest input.waiting,
+#myTable-sit th.implementer,
+#myTable-sit td.implementer,
+#myTable-sit input.implementer,
+#myTable-sit th.waiting,
+#myTable-sit td.waiting,
+#myTable-sit input.waiting,
+#myTable-uat th.implementer,
+#myTable-uat td.implementer,
+#myTable-uat input.implementer,
+#myTable-uat th.waiting,
+#myTable-uat td.waiting,
+#myTable-uat input.waiting,
+#myTable-rtest th.implementer,
+#myTable-rtest td.implementer,
+#myTable-rtest input.implementer,
+#myTable-rtest th.waiting,
+#myTable-rtest td.waiting,
+#myTable-rtest input.waiting,
+#myTable-Decommission th.implementer,
+#myTable-Decommission td.implementer,
+#myTable-Decommission input.implementer,
+#myTable-Decommission th.waiting,
+#myTable-Decommission td.waiting,
+#myTable-Decommission input.waiting {
+    width: auto;
+}
+
+#myTable-ims th.implementer,
+#myTable-ims td.implementer,
+#myTable-ims input.implementer,
+#myTable-ims th.waiting,
+#myTable-ims td.waiting,
+#myTable-ims input.waiting,
+#myTable-pms th.implementer,
+#myTable-pms td.implementer,
+#myTable-pms input.implementer,
+#myTable-pms th.waiting,
+#myTable-pms td.waiting,
+#myTable-pms input.waiting {
+    width: auto;
+}
+
+textarea.summary,
+textarea.observations {
+    width: 100%;
+    margin-top: 10%;
+}
+
+#section-IM-table textarea.summary,
+#section-IM-table textarea.observations,
+#section-PM-table textarea.summary,
+#section-PM-table textarea.observations {
+    margin-top: 7%;
+}
+
+#section-BLACKOUT-table textarea.summary {
+    margin-top: 5%;
+}
+
+#section-HANDOVER textarea {
+    margin-left: 5%;
+    width: 80%;
+    height: 250px;
+}
+
+button#button-generate-ho {
+    margin-left: 5%;
+}
+
+button#button-save-ho {
+    margin-left: 40px;
+}
+
+input.cm,
+input.stask,
+input#date-order,
+input.implementer,
+input.waiting,
+input.im,
+input.pm,
+input.ir {
+    border: none;
+}
+
+#select-mode,
+#import-part {
+    margin-left: 5%;
+}
+
+#select-mode H2,
+#import-part H2 {
+    margin-left: 0;
+}
+
+input#excel_file {
+    color: white;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button#button-mcsprod {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #7A736E;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 2px grey;
+    color: white;
+    padding: 35px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 33px;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-style: none;
+}
+
+button#button-mcsprod:hover {
+    background-color: #ddd;
+}
+
+button#button-save-data {
+    margin-left: 40px;
+}
+
+.custom-file-upload:hover {
+    background-color: #ddd;
+}
+
+.custom-file-upload {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #7A736E;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 2px grey;
+    color: white;
+    padding: 35px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 33px;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.alert.alert-danger {
+    color: #C61900;
+    margin-left: 5%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
