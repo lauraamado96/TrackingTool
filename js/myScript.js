@@ -137,6 +137,7 @@ function mcsprodFileUpdate() {
     }
 
     mcsprodFile();
+    pageChange('CM');
 
 }
 
@@ -1657,6 +1658,18 @@ function addFunctionBLACKOUT() {
     textarea4.style = "overflow:hidden";
     textarea4.value = document.getElementById("blackout_summary").value;
 
+    // Campo Scheduled Start Date
+    var input5 = document.createElement("input");
+    input5.type = "text";
+    input5.className = "date";
+    input5.value = document.getElementById("date-i").value;
+
+    // Campo Scheduled End Date
+    var input6 = document.createElement("input");
+    input6.type = "text";
+    input6.className = "date";
+    input6.value = document.getElementById("date-f").value;
+
     // Insertamos la fila al final de la tabla
     var row = table.insertRow(-1);
 
@@ -1665,23 +1678,29 @@ function addFunctionBLACKOUT() {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
 
     cell1.appendChild(input);
     cell2.appendChild(input2);
     cell3.appendChild(input3);
     cell4.appendChild(textarea4);
+    cell5.appendChild(input5);
+    cell6.appendChild(input6);
     cell1.className = "cm";
     cell2.className = "stask";
     cell3.className = "ir";
     cell4.className = "summary";
+    cell5.className = "date";
+    cell6.className = "date";
 
     // Campo Delete
-    var input5 = document.createElement("input");
-    input5.type = "button";
-    input5.className = "button";
-    input5.value = "Delete";
-    input5.id = "del_id";
-    input5.onclick = function () {
+    var input7 = document.createElement("input");
+    input7.type = "button";
+    input7.className = "button";
+    input7.value = "Delete";
+    input7.id = "del_id";
+    input7.onclick = function () {
         if (confirm('Are you sure you want to delete?')) {
             // Delete!
             var fila = this.parentNode.parentNode;
@@ -1698,13 +1717,15 @@ function addFunctionBLACKOUT() {
         }
     }
 
-    cell5.appendChild(input5);
-    cell5.className = "del";
+    cell7.appendChild(input7);
+    cell7.className = "del";
 
     document.getElementById("blackout_cm_id").value = "";
     document.getElementById("blackout_stask_id").value = "";
     document.getElementById("ir_id").value = "";
     document.getElementById("blackout_summary").value = "";
+    document.getElementById("date-i").value = "";
+    document.getElementById("date-f").value = "";
 
     // Guardamos los datos actuales en mcsprod
     dataSavedMachine();
@@ -2397,6 +2418,8 @@ function createSheet4(sheet_data_4, sel_mode) {
             var cell2 = row_table.insertCell(1);
             var cell3 = row_table.insertCell(2);
             var cell4 = row_table.insertCell(3);
+            var cell5 = row_table.insertCell(4);
+            var cell6 = row_table.insertCell(5);
 
             // Modo Editor
             if (Number(sel_mode) == 1) {
@@ -2427,23 +2450,38 @@ function createSheet4(sheet_data_4, sel_mode) {
                 textarea4.style = "overflow:hidden";
                 textarea4.value = sheet_data_4[d][3];
 
+                // Campo Scheduled Start Date
+                var input5 = document.createElement("input");
+                input5.type = "text";
+                input5.className = "date";
+                input5.value = sheet_data_4[d][4];
+
+                // Campo Scheduled End Date
+                var input6 = document.createElement("input");
+                input6.type = "text";
+                input6.className = "date";
+                input6.value = sheet_data_4[d][5];
 
                 cell1.appendChild(input);
                 cell2.appendChild(input2);
                 cell3.appendChild(input3);
                 cell4.appendChild(textarea4);
+                cell5.appendChild(input5);
+                cell6.appendChild(input6);
                 cell1.className = "cm";
                 cell2.className = "stask";
                 cell3.className = "ir";
                 cell4.className = "summary";
+                cell5.className = "date";
+                cell6.className = "date";
 
-                var cell5 = row_table.insertCell(4);
+                var cell7 = row_table.insertCell(6);
 
                 // Campo Delete
-                var input5 = createInputDel(get_table);
+                var input7 = createInputDel(get_table);
 
-                cell5.appendChild(input5);
-                cell5.className = "del";
+                cell7.appendChild(input7);
+                cell7.className = "del";
 
             } else { // Modo Visor
 
@@ -2467,15 +2505,28 @@ function createSheet4(sheet_data_4, sel_mode) {
                 text4.className = "summary";
                 text4.textContent = sheet_data_4[d][3];
 
+                // Campo Scheduled Start Date
+                var text5 = document.createElement("h5");
+                text5.className = "date";
+                text5.textContent = sheet_data_4[d][4];
+
+                // Campo Scheduled End Date
+                var text6 = document.createElement("h5");
+                text6.className = "date";
+                text6.textContent = sheet_data_4[d][5];
 
                 cell1.appendChild(text);
                 cell2.appendChild(text2);
                 cell3.appendChild(text3);
                 cell4.appendChild(text4);
+                cell5.appendChild(text5);
+                cell6.appendChild(text6);
                 cell1.className = "cm";
                 cell2.className = "stask";
                 cell3.className = "ir";
                 cell4.className = "summary";
+                cell5.className = "date";
+                cell6.className = "date";
 
             }
 
