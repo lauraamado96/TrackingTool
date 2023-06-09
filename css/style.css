@@ -186,83 +186,60 @@ button#button-menu-ho {
     text-align: left;
 }
 
-#section-0 select#status,
-#section-0 select#enviroment,
-#section-2 select#status,
-#section-2 select#enviroment,
-#section-3 select#status,
-#section-3 select#enviroment,
-#section-4 select#status,
-#section-4 select#enviroment {
+#section-to-add-lines-1,
+#section-to-add-lines-2,
+#section-to-add-lines-3,
+#section-to-add-lines-4 {
+    margin-bottom: 2px;
+}
+
+#section-CM #section-to-add-lines-1,
+#section-CM #section-to-add-lines-2,
+#section-CM #section-to-add-lines-3,
+#section-IM #section-to-add-lines-1,
+#section-IM #section-to-add-lines-2 ,
+#section-PM #section-to-add-lines-1,
+#section-PM #section-to-add-lines-2,
+#section-BLACKOUT #section-to-add-lines-1,
+#section-BLACKOUT #section-to-add-lines-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+}
+
+#section-CM #section-to-add-lines-1 input[type="text"] {
+    width: 200px;
+}
+
+#section-CM #section-to-add-lines-1 select {
+    width: 208px;
     height: 21.5px;
-    width: 8.5%;
 }
 
-#section-0 input,
-#section-2 input,
-#section-3 input,
-#section-4 input {
-    width: 8%;
+#section-CM #section-to-add-lines-2 input[type="text"] {
+    width: 830px;
 }
 
-#section-0 input#summary,
-#section-0 input#im_summary,
-#section-0 input#pm_summary,
-#section-0 input#blackout_summary,
-#section-2 input#summary,
-#section-2 input#im_summary,
-#section-2 input#pm_summary,
-#section-2 input#blackout_summary,
-#section-3 input#summary,
-#section-3 input#im_summary,
-#section-3 input#pm_summary,
-#section-3 input#blackout_summary,
-#section-4 input#summary,
-#section-4 input#im_summary,
-#section-4 input#pm_summary,
-#section-4 input#blackout_summary {
-    width: 34%;
+#section-CM #section-to-add-lines-3 input[type="text"],
+#section-CM #section-to-add-lines-3 input[list] {
+    width: 200px;
 }
 
-#section-0 input#date,
-#section-0 input#im_obs,
-#section-0 input#pm_obs,
-#section-2 input#date,
-#section-2 input#im_obs,
-#section-2 input#pm_obs,
-#section-3 input#date,
-#section-3 input#im_obs,
-#section-3 input#pm_obs,
-#section-4 input#date,
-#section-4 input#im_obs,
-#section-4 input#pm_obs {
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
+#section-IM #section-to-add-lines-1 input[type="text"],
+#section-IM #section-to-add-lines-2 input[type="text"],
+#section-PM #section-to-add-lines-1 input[type="text"],
+#section-PM #section-to-add-lines-2 input[type="text"],
+#section-BLACKOUT #section-to-add-lines-1 input[type="text"],
+#section-BLACKOUT #section-to-add-lines-2 input[type="text"] {
+    width: 270px;
 }
 
-#section-0 input#blackout_cm_id,
-#section-2 input#blackout_cm_id,
-#section-3 input#blackout_cm_id,
-#section-4 input#blackout_cm_id {
-    margin-bottom: 0.5%;
-}
-
-#section-0 input#obs,
-#section-2 input#obs,
-#section-3 input#obs,
-#section-4 input#obs {
-    width: 42.8%;
-}
-
-#section-0 input#im_obs,
-#section-0 input#pm_obs,
-#section-2 input#im_obs,
-#section-2 input#pm_obs,
-#section-3 input#im_obs,
-#section-3 input#pm_obs,
-#section-4 input#im_obs,
-#section-4 input#pm_obs {
-    width: 51.6%;
+#section-CM #section-to-add-lines-4,
+#section-IM #section-to-add-lines-3,
+#section-PM #section-to-add-lines-3,
+#section-BLACKOUT #section-to-add-lines-3 {
+    justify-content: center;
 }
 
 button#button-add {
@@ -425,6 +402,7 @@ button#button-add {
 #myTable-blackouts tr:nth-child(even) td.stask,
 #myTable-blackouts tr:nth-child(even) td.ir,
 #myTable-blackouts tr:nth-child(even) td.summary,
+#myTable-blackouts tr:nth-child(even) td.date,
 #myTable-blackouts tr:nth-child(even) input {
     background-color: #f2f2f2;
 }
@@ -524,7 +502,8 @@ button#button-add {
 #myTable-blackouts tr td.cm,
 #myTable-blackouts tr td.stask,
 #myTable-blackouts tr td.ir,
-#myTable-blackouts tr td.summary {
+#myTable-blackouts tr td.summary,
+#myTable-blackouts tr td.date {
     background-color: #ffffff;
 }
 
@@ -683,6 +662,7 @@ button.button:hover,
 #myTable-blackouts tr:hover td.stask,
 #myTable-blackouts tr:hover td.ir,
 #myTable-blackouts tr:hover td.summary,
+#myTable-blackouts tr:hover td.date,
 #myTable-blackouts tr:hover input,
 #myTable-blackouts tr:nth-child(even):hover input#del_id,
 #myTable-blackouts tr:nth-child(even):hover textarea,
@@ -867,7 +847,8 @@ button.button:hover,
 #myTable-blackouts th.cm,
 #myTable-blackouts th.stask,
 #myTable-blackouts th.ir,
-#myTable-blackouts th.summary {
+#myTable-blackouts th.summary,
+#myTable-blackouts th.date {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -1159,7 +1140,10 @@ textarea {
 #myTable-rtest input.date,
 #myTable-Decommission th.date,
 #myTable-Decommission td.date,
-#myTable-Decommission input.date {
+#myTable-Decommission input.date,
+#myTable-blackouts th.date,
+#myTable-blackouts td.date,
+#myTable-blackouts input.date {
     width: auto;
 }
 
@@ -1275,6 +1259,7 @@ button#button-save-ho {
 input.cm,
 input.stask,
 input#date-order,
+input.date,
 input.implementer,
 input.waiting,
 input.im,
