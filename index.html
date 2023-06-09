@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="favicon.ico">
@@ -11,6 +12,7 @@
 	<script src="./js/md5.min.js"></script>
 	<script src="./js/myScript.js"></script>
 </head>
+
 <body onload="shuttle()">
 
 	<header>
@@ -75,48 +77,54 @@
 	<div id="section-CM" style="display: none;">
 		<h1>CMs</h1>
 		<div id="section-0" style="display: none;">
-			<input type="text" id="cm_id" placeholder="CM Ticket">
-			<select id="status">
-				<option value="Select Status">Select Status</option>
-				<option value="Draft">Draft</option>
-				<option value="Pending approval">Pending approval</option>
-				<option value="Pending scheduling">Pending scheduling</option>
-				<option value="Scheduled">Scheduled</option>
-				<option value="Completed">Completed</option>
-				<option value="WIP">WIP</option>
-			</select>
-			<select id="enviroment">
-				<option value="Select Enviroment">Select Enviroment</option>
-				<option value="Prod">Prod</option>
-				<option value="XCOMP">XCOMP</option>
-				<option value="Training">Training</option>
-				<option value="Test">Test</option>
-				<option value="Dev">Dev</option>
-				<option value="Perf Test">Perf Test</option>
-				<option value="SIT">SIT</option>
-				<option value="UAT">UAT</option>
-				<option value="RTEST">RTEST</option>
-				<option value="Decommission">Decommission</option>
-			</select>
-			<input type="text" id="stask_id" placeholder="STASK number">
-			<input type="text" id="summary" placeholder="Summary">
-			<br>
-			<input type="text" id="date" placeholder="dd/mm/yy hh:mm"
-				oninput="this.value = this.value.replace(/[^0-9/ :]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
-				maxlength="16">
-			<input type="text" id="imp_name" placeholder="Implementer Name">
-			<input type="text" id="obs" placeholder="Observations">
-			<input type="text" list="waiting_for_list" id="waiting_for" placeholder="Waiting for">
-			<datalist id="waiting_for_list">
-				<option value="Tier 2 actions"></option>
-				<option value="Customer feedback"></option>
-				<option value="PSEs feedback"></option>
-				<option value="T3DBA feedback"></option>
-				<option value="T3FMW feedback"></option>
-				<option value="T3SYS feedback"></option>
-			</datalist>
-			<br>
-			<button onclick="addFunctionCM()" id="button-add" class="button" type="button">Add</button>
+			<div id="section-to-add-lines-1">
+				<input type="text" id="cm_id" placeholder="CM Ticket">
+				<select id="status">
+					<option value="Select Status">Select Status</option>
+					<option value="Draft">Draft</option>
+					<option value="Pending approval">Pending approval</option>
+					<option value="Pending scheduling">Pending scheduling</option>
+					<option value="Scheduled">Scheduled</option>
+					<option value="Completed">Completed</option>
+					<option value="WIP">WIP</option>
+				</select>
+				<select id="enviroment">
+					<option value="Select Enviroment">Select Enviroment</option>
+					<option value="Prod">Prod</option>
+					<option value="XCOMP">XCOMP</option>
+					<option value="Training">Training</option>
+					<option value="Test">Test</option>
+					<option value="Dev">Dev</option>
+					<option value="Perf Test">Perf Test</option>
+					<option value="SIT">SIT</option>
+					<option value="UAT">UAT</option>
+					<option value="RTEST">RTEST</option>
+					<option value="Decommission">Decommission</option>
+				</select>
+				<input type="text" id="stask_id" placeholder="STASK number">
+			</div>
+			<div id="section-to-add-lines-2">
+				<input type="text" id="summary" placeholder="Summary">
+			</div>
+			<div id="section-to-add-lines-3">
+				<input type="text" id="date" placeholder="dd/mm/yy hh:mm"
+					oninput="this.value = this.value.replace(/[^0-9/ :]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+					maxlength="16">
+				<input type="text" id="imp_name" placeholder="Implementer Name">
+				<input type="text" id="obs" placeholder="Observations">
+				<input type="text" list="waiting_for_list" id="waiting_for" placeholder="Waiting for">
+				<datalist id="waiting_for_list">
+					<option value="Tier 2 actions"></option>
+					<option value="Customer feedback"></option>
+					<option value="PSEs feedback"></option>
+					<option value="T3DBA feedback"></option>
+					<option value="T3FMW feedback"></option>
+					<option value="T3SYS feedback"></option>
+				</datalist>
+			</div>
+			<div id="section-to-add-lines-4">
+				<button onclick="addFunctionCM()" id="button-add" class="button" type="button">Add</button>
+			</div>
 		</div>
 
 		<div id="section-1">
@@ -316,24 +324,28 @@
 	<div id="section-IM" style="display: none;">
 		<h1>IMs</h1>
 		<div id="section-2" style="display: none;">
-			<input type="text" id="im_id" placeholder="IM Ticket">
-			<input type="text" id="im_stask_id" placeholder="STASK number">
-			<input type="text" id="im_summary" placeholder="Summary">
-			<input type="text" id="im_imp_name" placeholder="Implementer Name">
-			<br>
-			<input type="text" id="im_obs" placeholder="Observations">
-			<input type="text" list="im_waiting_for_list" id="im_waiting_for" placeholder="Waiting for">
-			<datalist id="im_waiting_for_list">
-				<option value="WIP"></option>
-				<option value="Tier 2 actions"></option>
-				<option value="Customer feedback"></option>
-				<option value="PSEs feedback"></option>
-				<option value="T3DBA feedback"></option>
-				<option value="T3FMW feedback"></option>
-				<option value="T3SYS feedback"></option>
-			</datalist>
-			<br>
-			<button onclick="addFunctionIM()" id="button-add" class="button" type="button">Add</button>
+			<div id="section-to-add-lines-1">
+				<input type="text" id="im_id" placeholder="IM Ticket">
+				<input type="text" id="im_stask_id" placeholder="STASK number">
+				<input type="text" id="im_summary" placeholder="Summary">
+			</div>
+			<div id="section-to-add-lines-2">
+				<input type="text" id="im_imp_name" placeholder="Implementer Name">
+				<input type="text" id="im_obs" placeholder="Observations">
+				<input type="text" list="im_waiting_for_list" id="im_waiting_for" placeholder="Waiting for">
+				<datalist id="im_waiting_for_list">
+					<option value="WIP"></option>
+					<option value="Tier 2 actions"></option>
+					<option value="Customer feedback"></option>
+					<option value="PSEs feedback"></option>
+					<option value="T3DBA feedback"></option>
+					<option value="T3FMW feedback"></option>
+					<option value="T3SYS feedback"></option>
+				</datalist>
+			</div>
+			<div id="section-to-add-lines-3">
+				<button onclick="addFunctionIM()" id="button-add" class="button" type="button">Add</button>
+			</div>
 		</div>
 
 		<div id="section-IM-table" style="display: none;">
@@ -356,24 +368,28 @@
 	<div id="section-PM" style="display: none;">
 		<h1>PMs</h1>
 		<div id="section-3" style="display: none;">
-			<input type="text" id="pm_id" placeholder="PM Ticket">
-			<input type="text" id="pm_stask_id" placeholder="STASK number">
-			<input type="text" id="pm_summary" placeholder="Summary">
-			<input type="text" id="pm_imp_name" placeholder="Implementer Name">
-			<br>
-			<input type="text" id="pm_obs" placeholder="Observations">
-			<input type="text" list="pm_waiting_for_list" id="pm_waiting_for" placeholder="Waiting for">
-			<datalist id="pm_waiting_for_list">
-				<option value="WIP"></option>
-				<option value="Tier 2 actions"></option>
-				<option value="Customer feedback"></option>
-				<option value="PSEs feedback"></option>
-				<option value="T3DBA feedback"></option>
-				<option value="T3FMW feedback"></option>
-				<option value="T3SYS feedback"></option>
-			</datalist>
-			<br>
-			<button onclick="addFunctionPM()" id="button-add" class="button" type="button">Add</button>
+			<div id="section-to-add-lines-1">
+				<input type="text" id="pm_id" placeholder="PM Ticket">
+				<input type="text" id="pm_stask_id" placeholder="STASK number">
+				<input type="text" id="pm_summary" placeholder="Summary">
+			</div>
+			<div id="section-to-add-lines-2">
+				<input type="text" id="pm_imp_name" placeholder="Implementer Name">
+				<input type="text" id="pm_obs" placeholder="Observations">
+				<input type="text" list="pm_waiting_for_list" id="pm_waiting_for" placeholder="Waiting for">
+				<datalist id="pm_waiting_for_list">
+					<option value="WIP"></option>
+					<option value="Tier 2 actions"></option>
+					<option value="Customer feedback"></option>
+					<option value="PSEs feedback"></option>
+					<option value="T3DBA feedback"></option>
+					<option value="T3FMW feedback"></option>
+					<option value="T3SYS feedback"></option>
+				</datalist>
+			</div>
+			<div id="section-to-add-lines-3">
+				<button onclick="addFunctionPM()" id="button-add" class="button" type="button">Add</button>
+			</div>
 		</div>
 
 		<div id="section-PM-table" style="display: none;">
@@ -396,12 +412,23 @@
 	<div id="section-BLACKOUT" style="display: none;">
 		<h1>Blackouts</h1>
 		<div id="section-4" style="display: none;">
-			<input type="text" id="blackout_cm_id" placeholder="CM Ticket">
-			<input type="text" id="blackout_stask_id" placeholder="STASK number">
-			<input type="text" id="ir_id" placeholder="IR number">
-			<input type="text" id="blackout_summary" placeholder="Summary">
-			<br>
-			<button onclick="addFunctionBLACKOUT()" id="button-add" class="button" type="button">Add</button>
+			<div id="section-to-add-lines-1">
+				<input type="text" id="blackout_cm_id" placeholder="CM Ticket">
+				<input type="text" id="blackout_stask_id" placeholder="STASK number">
+				<input type="text" id="ir_id" placeholder="IR number">
+			</div>
+			<div id="section-to-add-lines-2">
+				<input type="text" id="blackout_summary" placeholder="Summary">
+				<input type="text" id="date-i" placeholder="Scheduled Start Date"
+				oninput="this.value = this.value.replace(/[^0-9/ :]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+				maxlength="16">
+				<input type="text" id="date-f" placeholder="Scheduled End Date"
+				oninput="this.value = this.value.replace(/[^0-9/ :]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+				maxlength="16">
+			</div>
+			<div id="section-to-add-lines-3">
+				<button onclick="addFunctionBLACKOUT()" id="button-add" class="button" type="button">Add</button>
+			</div>
 		</div>
 
 		<div id="section-BLACKOUT-table" style="display: none;">
@@ -412,6 +439,8 @@
 						<th class="stask">STASK number</th>
 						<th class="ir">IR number</th>
 						<th class="summary">Summary</th>
+						<th class="date">Scheduled Start Date</th>
+						<th class="date">Scheduled End Date</th>
 						<th class="del"></th>
 					</tr>
 				</table>
@@ -510,4 +539,5 @@
 
 	</script>
 </body>
+
 </html>
